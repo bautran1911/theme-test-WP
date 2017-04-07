@@ -1,0 +1,167 @@
+/*
+Theme Name: Twenty Thirteen
+Theme URI: http://wordpress.org/themes/twentythirteen
+Author: the WordPress team
+Author URI: http://wordpress.org/
+Description: The 2013 theme for WordPress takes us back to the blog, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: twentythirteen
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+body{
+    background-color: #fff;
+    }
+
+p{
+    font-size: 1em;
+    margin-top: 0;
+    margin-bottom: 1.305em;
+    }
+
+strong{
+    font-weight: bold;
+    }
+
+a:link, a:visited{
+    color: #1A4260;
+    }
+
+.content-post{
+    min-height: 100vh;
+    background: url(http://singaporewatchclub.com/site/wp-content/themes/singapore-watch-club/assets/images/pattern2.svg) center 2rem no-repeat;
+    max-width: 55rem;
+    padding: 0 1.25em;
+    width: auto;
+    margin: 0 auto;
+    }
+
+.menu-post{
+    font-size: 0.64em;
+    font-family: "Proxima Nova", Arial, sans-serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 1.25em;    
+    }
+
+.breadcrumbs{
+    border-radius: 2px;
+    padding: 0;
+    margin: 1.5rem 0 0 0;
+    color: #1A4260;
+    line-height: 1.4;
+    }
+
+.breadcrumbs li{
+    line-height: 2.7em;
+    display: inline;
+    margin: 0;
+    }
+
+.breadcrumbs li::after{
+    margin: 0 1.5rem;
+    color: inherit;
+    content: '/';
+    display: inline;
+    margin: 0 .7em;
+    }
+
+.breadcrumbs li:last-child::after{
+    display: none;
+    }
+
+.breadcrumbs li a{
+    display: inline;
+    padding: 0;
+    }
+
+.serif{
+    font-family: 'Playfair Display', serif;
+    }
+
+.entry-title{
+    margin: 1rem 0 0;
+    font-weight: normal;    
+    }
+
+.color-accent{
+    color: #B8976A;
+    }
+
+a[rel="author"]{
+    color: #B8976A;
+    }
+
+.social-buttons{
+    font-size: 2.4em;
+    }
+
+.color-fb{
+    color: #455990;
+    }
+
+.color-tw{
+    color: #29A2EF;
+    }
+
+.color-pt{
+    color: #C7242E;
+    }
+
+.entry-content{
+    font-size: 18px;
+    color: #58595B;
+    letter-spacing: 0;
+    font-family: "Proxima Nova", Arial, sans-serif;
+    }
+
+.entry-content h1{
+    font-size: 18px;
+    font-weight: bold;
+    }
+
+.vertical-space{
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    }
+
+.wp-caption{
+    border: 0;
+    padding: 0;
+    max-width: 100%;
+    background: #fff;
+    text-align: center;  
+    margin: 5px 20px 20px 0;  
+    }
+
+.wp-caption img{
+    width: 100%;
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    }
+
+.wp-caption-text{
+    text-align: left;
+    font-size: 14px;
+    padding: 1rem 0 0.5rem;
+    font-style: italic;
+    }
+
+.read-next{
+    margin-bottom: 2.5em;
+    }
+
+.read-next a{
+    color: #B8976A;
+    }
+
+.tags a::before{
+    content: '#';
+    }
