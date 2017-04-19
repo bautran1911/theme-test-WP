@@ -21,38 +21,12 @@
             </a>
 
         </nav>
-        <nav class="menu-lg dn relative overflow-visible">
-            <ul class="ul-lg v-mid list tc">
-                <li class="menu-item relative v-mid fw3">
-                    <a href="<?php bloginfo('url'); ?>">HOME</a>
-                </li>
-                <li class="menu-item relative v-mid fw3">
-                    <a href="">ABOUT US</a>
-                </li>
-                <li class="menu-item relative v-mid fw3">
-                    <a href=""> PUBLICATIONS</a>
-                </li>
-                <li class="menu-item relative v-mid fw3">
-                    <a class="logo" href="">
-                        <h1>
-                            <img class="branding" src="http://singaporewatchclub.com/site/wp-content/uploads/2016/10/logo-dep.png" alt="logo" />
-                        </h1>
-                    </a>
-                </li>
-                <li class="menu-item relative v-mid fw3">
-                    <a class="forum" href="">FORUM</a>
-                </li>
-                <li class="menu-item relative v-mid fw3">
-                    <a href="">EVENTS</a>
-                </li>
-                <li class="menu-item relative v-mid fw3">
-                    <a href="">CONTACTUS</a>
-                </li>
-                <li class="menu-item relative v-mid fw3">
-                    <a href=""><i class="fa fa-search" aria-hidden="true"></i></a>
-                </li>
-            </ul>
-        </nav>
+         <?php wp_nav_menu( array(
+            'theme_location' => 'main-nav', 
+            'container' => 'nav', 
+            'container_class' => 'menu-lg dn relative overflow-visible', 
+            'menu_class' => 'ul-lg v-mid list tc' 
+            ) ); ?>         
     </header>
     <div>
         <div class="content-post">
@@ -124,7 +98,17 @@
         </div>
     </div>
     <footer>
-        <p class="footer-content tc">SINGAPORE WATCH CLUB 2017 © ALL RIGHT RESERVED</p>
+            <?php wp_nav_menu( array(
+                'theme_location' => 'footer-nav', 
+                'container' => 'nav', 
+                'container_class' => 'footer-nav', 
+                'menu_class' => 'menu clearfix' 
+            ) ); ?>
+        <p class="footer-content tc">
+    <?php
+			echo get_theme_mod("ads_text");
+		?>
+    </p>
     </footer>
 </body>
 

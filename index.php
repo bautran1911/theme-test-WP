@@ -21,40 +21,18 @@
             </a>
 
         </nav>
-        <nav class="menu-lg dn relative overflow-visible">
-        <?php  register_nav_menus() ?>
-        <?php wp_nav_menu(); ?>
-            <ul class="ul-lg v-mid list tc">
-                <li class="menu-item relative v-mid fw3">
-                    <a href="<?php bloginfo('url'); ?>">HOME</a>
-                </li>
-                <li class="menu-item relative v-mid fw3">
-                    <a href="">ABOUT US</a>
-                </li>
-                <li class="menu-item relative v-mid fw3">
-                    <a href=""> PUBLICATIONS</a>
-                </li>
-                <li class="menu-item relative v-mid fw3">
-                    <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                        <h1>
-                            <img class="branding" src="http://singaporewatchclub.com/site/wp-content/uploads/2016/10/logo-dep.png" alt="logo" />
-                        </h1>
-                    </a>
-                </li>
-                <li class="menu-item relative v-mid fw3">
-                    <a class="forum" href="">FORUM</a>
-                </li>
-                <li class="menu-item relative v-mid fw3">
-                    <a href="">EVENTS</a>
-                </li>
-                <li class="menu-item relative v-mid fw3">
-                    <a href="">CONTACTUS</a>
-                </li>
-                <li class="menu-item relative v-mid fw3">
-                    <a href=""><i class="fa fa-search" aria-hidden="true"></i></a>
-                </li>
-            </ul>
-        </nav>
+        <?php wp_nav_menu( array(
+            'theme_location' => 'main-nav-sm', 
+            'container' => 'nav', 
+            'container_class' => 'menu-sm relative overflow-visible', 
+            'menu_class' => 'ul-lg v-mid list tc' 
+            ) ); ?>        
+       <?php wp_nav_menu( array(
+            'theme_location' => 'main-nav', 
+            'container' => 'nav', 
+            'container_class' => 'menu-lg dn relative overflow-visible', 
+            'menu_class' => 'ul-lg v-mid list tc' 
+            ) ); ?>           
     </header>
     <div class="content">
         <div class="pub">
@@ -79,8 +57,17 @@
     </div>
     
     <footer>
-    
-    <?php sp_custom_footer(); ?>
+    <?php wp_nav_menu( array(
+     'theme_location' => 'footer-nav', 
+     'container' => 'nav', 
+     'container_class' => 'footer-nav', 
+     'menu_class' => 'menu clearfix' 
+) ); ?>
+<p class="footer-content tc">
+    <?php
+			echo get_theme_mod("ads_text");
+		?>
+    </p>
     </footer>
 </body>
 
