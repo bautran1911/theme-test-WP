@@ -30,14 +30,14 @@ register_nav_menus(
 });
 
 
-function sitepoint_customize_register($wp_customize) 
+function footer_customize_register($wp_customize) 
 {
 	$wp_customize->add_section("ads", array(
 		"title" => __("Footer", "customizer_ads_sections"),
 		"priority" => 30,
 	));
 
-        $wp_customize->add_setting("ads_text", array(
+        $wp_customize->add_setting("footer_text", array(
 		"default" => "",
 		"transport" => "postMessage",
 	));
@@ -46,17 +46,17 @@ function sitepoint_customize_register($wp_customize)
 		$wp_customize,
 		"ads_text",
 		array(
-			"label" => __("Enter Ads Text", "customizer_ads_text_label"),
+			"label" => __("Enter Footer Text", "customizer_ads_text_label"),
 			"section" => "ads",
-			"settings" => "ads_text",
+			"settings" => "footer_text",
 			"type" => "textarea",
 		)
 	));
 
-        wp_enqueue_script("sitepoint-themecustomizer", get_template_directory_uri() . "/theme-customizer.js", array("jquery", "customize-preview"), '',  true);
+        wp_enqueue_script("footer-themecustomizer", get_template_directory_uri() . "/theme-customizer.js", array("jquery", "customize-preview"), '',  true);
 }
 
-add_action("customize_register","sitepoint_customize_register");
+add_action("customize_register","footer_customize_register");
 
 
 

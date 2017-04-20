@@ -65,7 +65,7 @@
 ) ); ?>
 <p class="footer-content tc">
     <?php
-			echo get_theme_mod("ads_text");
+			echo get_theme_mod("footer_text");
 		?>
     </p>
     </footer>
