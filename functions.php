@@ -29,11 +29,11 @@
 
 	});
 
-
+// Footer text
 	function footer_customize_register($wp_customize) 
 	{
-		$wp_customize->add_section("ads", array(
-			"title" => __("Footer", "customizer_ads_sections"),
+		$wp_customize->add_section("footer", array(
+			"title" => __("Footer", "customizer_footer_sections"),
 			"priority" => 30,
 		));
 
@@ -46,8 +46,8 @@
 			$wp_customize,
 			"ads_text",
 			array(
-				"label" => __("Enter Footer Text", "customizer_ads_text_label"),
-				"section" => "ads",
+				"label" => __("Enter Footer Text", "customizer_footer_text_label"),
+				"section" => "footer",
 				"settings" => "footer_text",
 				"type" => "textarea",
 			)
@@ -57,6 +57,40 @@
 	}
 
 	add_action("customize_register","footer_customize_register");
+
+// Breadcrumb
+	function the_breadcrumb() {
+                echo '<ul id="crumbs" class="breadcrumbs list fw3">';
+        if (!is_home()) {
+                echo '<li><a href="';
+                echo get_option('home');
+                echo '">';
+                echo 'Home';
+                echo "</a></li>";
+                if (is_category() || is_single()) {
+                        echo '<li>';
+                        the_category(' </li><li> ');
+                        if (is_single()) {
+                                echo "</li><li>";
+                                the_title();
+                                echo '</li>';
+                        }
+                } elseif (is_page()) {
+                        echo '<li>';
+                        echo the_title();
+                        echo '</li>';
+                }
+        }
+        elseif (is_tag()) {single_tag_title();}
+        elseif (is_day()) {echo"<li>Archive for "; the_time('F jS, Y'); echo'</li>';}
+        elseif (is_month()) {echo"<li>Archive for "; the_time('F, Y'); echo'</li>';}
+        elseif (is_year()) {echo"<li>Archive for "; the_time('Y'); echo'</li>';}
+        elseif (is_author()) {echo"<li>Author Archive"; echo'</li>';}
+        elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>Blog Archives"; echo'</li>';}
+        elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
+        echo '</ul>';
+}
+
 
 
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.6.1/css/tachyons.min.css" />
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/fa/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/flexslider.css" />
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
     <title><?php bloginfo('name'); ?></title>
 </head>
@@ -20,13 +21,19 @@
                 </h1>
             </a>
 
-        </nav>
+        
+        <button class="button-menu hamburger hamburger--squeeze" onclick="toggleMenu(this)">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
         <?php wp_nav_menu( array(
             'theme_location' => 'main-nav-sm', 
-            'container' => 'nav', 
-            'container_class' => 'menu-sm relative overflow-visible', 
-            'menu_class' => 'ul-lg v-mid list tc' 
-            ) ); ?>        
+            'container' => 'div', 
+            'container_class' => 'menu-container inverted js-menu serif color-accent extralarge dn', 
+            'menu_class' => 'menu' 
+            ) ); ?>
+            </nav>        
        <?php wp_nav_menu( array(
             'theme_location' => 'main-nav', 
             'container' => 'nav', 
@@ -69,6 +76,13 @@
 		?>
     </p>
     </footer>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+    <script src="<?php echo get_template_directory_uri() ?>/jquery.flexslider-min.js">
+
+    </script>
+    <script src="<?php echo get_template_directory_uri() ?>/javascript.js"></script>
+    <script src="<?php echo get_template_directory_uri() ?>/flex.js"></script>
 </body>
 
 </html>

@@ -32,21 +32,7 @@
         <div class="content-post">
             <div class="menu-post">
                 <nav class="relative overflow-visible">
-                    <ul class="breadcrumbs list fw3">
-                        <li>
-                            <a href="<?php bloginfo('url'); ?>" rel="home">
-                                <span itemprop="name">HOME</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span itemprop="name">PUBLICATIONS</span>
-                            </a>
-                        </li>
-                        <li>
-                            <span itemprop="name">Hands On: With the Panzera Aquamarine 45</span>
-                        </li>
-                    </ul>
+                    <?php the_breadcrumb(); ?>
                 </nav>
             </div>
             <header>
